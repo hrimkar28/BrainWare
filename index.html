@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BrainWare | Web Developer Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="BrainWare — a clean, minimal web developer portfolio by Hrimkar, featuring a responsive site and a simple expense tracker web app."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h1>BrainWare</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero / Home Section -->
+ <section id="home">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Portfolio · BrainWare</p>
+      <h2>Hey, I'm Hrimkar 👋</h2>
+      <p class="subtitle">
+        Beginner Web Developer & BCA Student. I love building clean, simple web
+        experiences and learning new tech.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="primary-btn">View My Work</a>
+        <a href="#contact" class="ghost-btn">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="avatar-ring">
+        <div class="avatar">
+          <span>BW</span>
+        </div>
+      </div>
+      <p class="avatar-caption">BrainWare · Web Developer</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + SKILLS -->
+<section id="about">
+  <div class="section-wrapper about-grid">
+    <div class="about-text">
+      <p class="section-eyebrow">About</p>
+      <h3 class="section-title">A quiet builder who likes clean web stuff.</h3>
+      <p class="section-body">
+  Learning something new every day and building projects that are small now,
+  but helping me grow into a better developer each step forward.
+</p>
+
+<p class="section-body">
+  I prefer simplicity — clean UI, smooth experience, and code that does the job
+  without unnecessary noise. Currently focusing on HTML, CSS and JavaScript by
+  building real projects.
+</p>
+
+    </div>
+
+    <div class="skills">
+      <p class="section-eyebrow">Skills</p>
+      <h4 class="skills-title">Tech I’m learning</h4>
+      <div class="skills-grid">
+        <div class="skill-pill">
+          <div class="skill-icon">HTML</div>
+          <span class="skill-label">Structure & basic layout</span>
+        </div>
+        <div class="skill-pill">
+          <div class="skill-icon">CSS</div>
+          <span class="skill-label">Styling & responsive design</span>
+        </div>
+        <div class="skill-pill">
+          <div class="skill-icon">JS</div>
+          <span class="skill-label">Interactivity & logic (beginner)</span>
+        </div>
+        <div class="skill-pill">
+          <div class="skill-icon">Git</div>
+          <span class="skill-label">Version control (getting started)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-wrapper">
+    <p class="section-eyebrow">PROJECTS</p>
+    <h3 class="section-title">Things I’ve been working on.</h3>
+    <p class="section-body" style="max-width: 520px; margin-bottom: 26px;">
+      Small, focused projects to learn the basics properly and build
+      confidence with HTML, CSS and JavaScript.
+    </p>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <article class="project-card">
+        <span class="project-pill">LIVE SOON</span>
+        <h4 class="project-title">BrainWare Portfolio</h4>
+        <p class="project-desc">
+          A single-page dark themed portfolio website with smooth navigation,
+          responsive layout and soft neon accents.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">RESPONSIVE</span>
+        </div>
+        <a href="#" class="project-link" style="opacity:0.6; cursor:default;">
+  View project (coming soon)
+</a>
+
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <span class="project-pill pill-secondary">LEARNING PROJECT</span>
+        <h4 class="project-title">Simple Expense Tracker</h4>
+        <p class="project-desc">
+          A small daily expense tracker that lets me add entries, see them in a
+          list and get the total spent. Data is stored in the browser.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">HTML</span>
+          <span class="project-tag">CSS</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">LocalStorage</span>
+        </div>
+        <a href="#expense-tracker" class="project-link">Open live demo</a>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <span class="project-pill pill-outline">UPCOMING</span>
+        <h4 class="project-title">Client-style Landing Page</h4>
+        <p class="project-desc">
+          A clean landing page concept for a small business or SaaS-style
+          product, focused on layout and typography.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">LAYOUT</span>
+          <span class="project-tag">UI DESIGN</span>
+        </div>
+        <a href="#" class="project-link" style="opacity:0.6; cursor:default;">
+  View project (planning)
+</a>
+
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPENSE TRACKER MINI APP -->
+<section id="expense-tracker">
+  <div class="section-wrapper expense-wrapper">
+    <p class="section-eyebrow">MINI APP</p>
+    <h3 class="section-title">Simple Expense Tracker</h3>
+    <p class="section-body" style="max-width: 520px; margin-bottom: 24px;">
+      Quick way to track daily spending. Everything stays in this browser only.
+    </p>
+
+    <div class="expense-grid">
+      <form class="expense-form" id="expenseForm">
+        <div class="field-group">
+          <label for="expenseName">Title</label>
+          <input
+            type="text"
+            id="expenseName"
+            placeholder="Coffee, Uber, Groceries..."
+            required
+          />
+        </div>
+
+        <div class="field-double">
+          <div class="field-group">
+            <label for="expenseAmount">Amount (₹)</label>
+            <input
+              type="number"
+              id="expenseAmount"
+              min="1"
+              step="1"
+              required
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="expenseCategory">Category</label>
+            <select id="expenseCategory">
+              <option>Food</option>
+              <option>Travel</option>
+              <option>Shopping</option>
+              <option>Bills</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="primary-btn expense-btn">
+          Add Expense
+        </button>
+      </form>
+
+      <div class="expense-panel">
+        <div class="expense-summary">
+          <p class="section-eyebrow" style="margin-bottom: 4px;">Total spent</p>
+          <h4>₹<span id="totalAmount">0</span></h4>
+        </div>
+        <ul id="expenseList" class="expense-list">
+          <!-- JS will inject items here -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-wrapper contact-box">
+    <p class="section-eyebrow">Contact</p>
+    <h3 class="section-title">Let’s connect quietly 👀</h3>
+    <p class="section-body" style="margin-bottom: 26px;">
+      If you'd like to reach out, feel free to email me anytime.
+      I reply when I'm in the right headspace 😌
+    </p>
+
+    <a href="mailto:mehtahrimkar03@gmail.com.com" class="primary-btn" style="text-decoration:none;">
+      Send an Email
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>© BrainWare — Built with 💙 by me, learning step by step</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

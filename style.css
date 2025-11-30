@@ -14,7 +14,10 @@ body {
   font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top left, #1f2933 0, #020617 40%, #000000 100%);
   color: #ffffff;
+  opacity: 0;
+  animation: pageFadeIn 0.7s ease-out forwards;
 }
+
 
 /* NAVBAR */
 header {
@@ -50,17 +53,54 @@ nav ul {
 }
 
 nav a {
+  position: relative;
   color: #e5e7eb;
   text-decoration: none;
   font-weight: 500;
   font-size: 15px;
-  transition: 0.25s;
+  padding-bottom: 2px;
+  transition: 0.22s ease;
 }
 
-nav a:hover {
-  color: #00eaff;
-  transform: translateY(-1px);
+/* underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #00eaff, #38bdf8);
+  opacity: 0;
+  transform: scaleX(0.3);
+  transform-origin: center;
+  transition: 0.22s ease;
 }
+
+/* hover = subtle glow + lift */
+.nav-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.55);
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* scrolled section active state */
+.nav-link.active {
+  color: #00eaff;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.75);
+}
+
+.nav-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 
 /* HERO SECTION */
 #home {
@@ -395,6 +435,13 @@ nav a:hover {
   gap: 4px;
 }
 
+.project-link-disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+
 .project-link:hover {
   text-decoration: underline;
 }
@@ -577,5 +624,17 @@ footer p {
   .expense-wrapper {
     padding-top: 20px;
     padding-bottom: 70px;
+  }
+}
+
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

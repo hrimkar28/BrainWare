@@ -742,8 +742,53 @@ footer p {
     padding-top: 30px;
     padding-bottom: 70px;
   }
-}
+    /* Fix BrainWare + Nav spacing on mobile */
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  nav h1 {
+    margin-right: 16px;
+  }
+
+  nav ul {
+    gap: 14px;
+  }
+
+
+  /* About + Skills mobile alignment */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+
+  /* Expense Tracker Card Mobile Layout */
+  .expense-card {
+    width: 100%;
+    margin: 20px 0;
+    padding: 28px;
+  }
+
+  .expense-grid {
+    display: block;
+  }
+
+  .expense-grid > div {
+    width: 100%;
+  }
+
+  .expense-grid .input-group {
+    margin-bottom: 16px;
+  }
+
+  .stats-box {
+    text-align: left;
+    margin-top: 20px;
+  }
+}
 
 @keyframes pageFadeIn {
   from {

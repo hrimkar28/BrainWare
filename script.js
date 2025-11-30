@@ -79,3 +79,28 @@ function renderExpenses() {
 
   totalEl.textContent = total.toString();
 }
+
+
+// Scroll Active Navigation Highlight
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function updateActiveLink() {
+  let current = "";
+  
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120; // adjust if needed
+    if (pageYOffset >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", updateActiveLink);

@@ -81,29 +81,27 @@ function renderExpenses() {
 }
 
 
-// ===== NAV ACTIVE LINK ON SCROLL (viewport based) =====
+// ===== NAV ACTIVE LINK ON SCROLL (simple + reliable) =====
 const navLinks = document.querySelectorAll(".nav-link");
-const navSections = document.querySelectorAll("section[id]");
+const navSections = [
+  document.getElementById("home"),
+  document.getElementById("about"),
+  document.getElementById("projects"),
+  document.getElementById("contact"),
+].filter(Boolean);
 
 function setActiveNav() {
-  let currentId = "";
+  let currentId = navSections[0]?.id || "home";
+  const scrollY = window.scrollY + 150; // navbar height + thoda offset
 
   navSections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    const triggerLine = 160; // top se kitni height pe section "active" mana jayega
-
-    if (rect.top <= triggerLine && rect.bottom >= triggerLine) {
+    if (scrollY >= section.offsetTop) {
       currentId = section.id;
     }
   });
 
-  // Fallback: agar kisi reason se kuch nahi mila to home active
-  if (!currentId && navSections.length > 0) {
-    currentId = navSections[0].id;
-  }
-
   navLinks.forEach((link) => {
-    const targetId = link.getAttribute("href").slice(1); // "#contact" -> "contact"
+    const targetId = link.getAttribute("href").slice(1); // "#about" -> "about"
     if (targetId === currentId) {
       link.classList.add("active");
     } else {
@@ -114,4 +112,3 @@ function setActiveNav() {
 
 window.addEventListener("scroll", setActiveNav);
 window.addEventListener("load", setActiveNav);
-

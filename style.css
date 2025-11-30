@@ -90,15 +90,13 @@ nav a {
   transform: scaleX(1);
 }
 
-/* scrolled section active state */
+/* clicked active state = pill style */
 .nav-link.active {
-  color: #00eaff;
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.75);
-}
-
-.nav-link.active::after {
-  opacity: 1;
-  transform: scaleX(1);
+  color: #020617;
+  background: linear-gradient(135deg, #00eaff, #38bdf8);
+  border-radius: 999px;
+  padding: 6px 14px;
+  text-shadow: none;
 }
 
 

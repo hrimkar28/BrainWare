@@ -81,44 +81,12 @@ function renderExpenses() {
 }
 
 
-// ===== NAV ACTIVE LINK ON SCROLL (final simple + bottom-fix) =====
+// ===== SIMPLE NAV ACTIVE ON CLICK =====
 const navLinks = document.querySelectorAll(".nav-link");
-const navSections = [
-  document.getElementById("home"),
-  document.getElementById("about"),
-  document.getElementById("projects"),
-  document.getElementById("contact"),
-].filter(Boolean);
 
-function setActiveNav() {
-  let currentId = navSections[0]?.id || "home";
-  const scrollY = window.scrollY + 150; // navbar height + offset
-
-  // Normal section logic
-  navSections.forEach((section) => {
-    if (scrollY >= section.offsetTop) {
-      currentId = section.id;
-    }
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.forEach((item) => item.classList.remove("active"));
+    link.classList.add("active");
   });
-
-  // If near bottom of page, force contact as active
-  const doc = document.documentElement;
-  const viewportBottom = window.scrollY + window.innerHeight;
-  const distanceFromBottom = doc.scrollHeight - viewportBottom;
-
-  if (distanceFromBottom < 40) {
-    currentId = "contact";
-  }
-
-  navLinks.forEach((link) => {
-    const targetId = link.getAttribute("href").slice(1); // "#contact" -> "contact"
-    if (targetId === currentId) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", setActiveNav);
-window.addEventListener("load", setActiveNav);
+});

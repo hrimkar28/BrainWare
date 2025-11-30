@@ -681,6 +681,67 @@ footer p {
   .skills-grid {
     gap: 10px;
   }
+
+    /* NAV: shrink a bit on small screens */
+  nav {
+    width: 92%;
+  }
+
+  nav h1 {
+    font-size: 18px;
+    letter-spacing: 0.06em;
+  }
+
+  nav ul {
+    gap: 14px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  /* active pill (the blue “Home”) – a bit smaller */
+  .nav-link.active {
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+
+    /* ABOUT: stack text and skills */
+  .about-grid {
+    display: block;
+  }
+
+  .about-text {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .section-body {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .skills-grid {
+    gap: 12px;
+  }
+    /* EXPENSE TRACKER: stack layout on mobile */
+  .expense-grid {
+    display: block;
+  }
+
+  .expense-form {
+    margin-bottom: 24px;
+  }
+
+  .expense-wrapper {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
 }
 
 

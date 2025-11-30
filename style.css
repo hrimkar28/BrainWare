@@ -185,7 +185,7 @@ nav a {
   background: rgba(15, 23, 42, 0.95);
 }
 
-/* Right side avatar */
+/* Right side avatar / logo */
 .hero-image {
   display: flex;
   flex-direction: column;
@@ -200,23 +200,56 @@ nav a {
 }
 
 .avatar {
-  height: 180px;
-  width: 180px;
+  position: relative;
+  height: 190px;
+  width: 190px;
   border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, #1f2937, #020617 70%);
+  background: radial-gradient(circle at 30% 20%, #111827, #020617 75%);
+  border: 2px solid rgba(15, 23, 42, 0.95);
+  box-shadow:
+    0 26px 60px rgba(15, 23, 42, 0.95),
+    0 0 45px rgba(56, 189, 248, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(15, 23, 42, 0.9);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.9);
+  overflow: hidden;
 }
 
-.avatar span {
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  color: #e5e7eb;
-  text-transform: uppercase;
+/* subtle inner dark circle */
+.avatar::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 20%, #020617, #020617 85%);
+  opacity: 0.96;
+}
+
+/* logo letters */
+.logo-letter {
+  position: relative;
+  z-index: 1;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 0.16em;
+}
+
+/* B = warm accent */
+.logo-b {
+  color: #facc15;
+  text-shadow:
+    0 0 10px rgba(250, 204, 21, 0.7),
+    0 0 24px rgba(250, 204, 21, 0.55);
+}
+
+/* W = cool neon */
+.logo-w {
+  color: #e5f4ff;
+  text-shadow:
+    0 0 12px rgba(56, 189, 248, 0.9),
+    0 0 30px rgba(56, 189, 248, 0.85);
+  transform: translateY(-1px);
 }
 
 .avatar-caption {
@@ -611,8 +644,12 @@ footer p {
   }
 
   .avatar {
-    height: 150px;
-    width: 150px;
+    height: 160px;
+    width: 160px;
+  }
+  .logo-letter {
+    font-size: 34px;
+    letter-spacing: 0.14em;
   }
 
   .section-wrapper {

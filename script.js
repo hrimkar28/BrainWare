@@ -81,7 +81,7 @@ function renderExpenses() {
 }
 
 
-// ===== NAV ACTIVE LINK ON SCROLL (simple + reliable) =====
+// ===== NAV ACTIVE LINK ON SCROLL (final simple + bottom-fix) =====
 const navLinks = document.querySelectorAll(".nav-link");
 const navSections = [
   document.getElementById("home"),
@@ -92,16 +92,26 @@ const navSections = [
 
 function setActiveNav() {
   let currentId = navSections[0]?.id || "home";
-  const scrollY = window.scrollY + 150; // navbar height + thoda offset
+  const scrollY = window.scrollY + 150; // navbar height + offset
 
+  // Normal section logic
   navSections.forEach((section) => {
     if (scrollY >= section.offsetTop) {
       currentId = section.id;
     }
   });
 
+  // If near bottom of page, force contact as active
+  const doc = document.documentElement;
+  const viewportBottom = window.scrollY + window.innerHeight;
+  const distanceFromBottom = doc.scrollHeight - viewportBottom;
+
+  if (distanceFromBottom < 40) {
+    currentId = "contact";
+  }
+
   navLinks.forEach((link) => {
-    const targetId = link.getAttribute("href").slice(1); // "#about" -> "about"
+    const targetId = link.getAttribute("href").slice(1); // "#contact" -> "contact"
     if (targetId === currentId) {
       link.classList.add("active");
     } else {

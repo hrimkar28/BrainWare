@@ -256,6 +256,13 @@ nav a {
   .expense-grid {
     grid-template-columns: 1fr;
   }
+  .hero {
+  text-align: center;
+}
+
+.hero-buttons {
+  justify-content: center;
+}
 }
 
 /* GENERIC SECTION STYLES */
@@ -623,6 +630,39 @@ footer p {
     padding-top: 20px;
     padding-bottom: 70px;
   }
+
+  .hero {
+  text-align: center;
+}
+
+.hero-text {
+  align-items: center;
+}
+
+.hero-text h2 {
+  font-size: 30px;
+}
+
+.hero-buttons {
+  justify-content: center;
+}
+
+.avatar {
+  margin: 0 auto;
+}
+
+.section-wrapper {
+  padding: 50px 0;
+}
+
+.projects-grid {
+  gap: 22px;
+}
+
+.contact-box {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
 }
 
 

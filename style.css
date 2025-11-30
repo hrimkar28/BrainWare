@@ -225,36 +225,37 @@ nav a {
   opacity: 0.96;
 }
 
-/* logo letters */
+/* BW letters inside avatar */
 .logo-letter {
-  position: relative;
-  z-index: 1;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
   font-size: 40px;
+  font-weight: 700;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
+  position: relative;
 }
 
-/* B = warm accent */
+/* B = warm soft glow */
 .logo-b {
-  color: #facc15;
+  color: #facc4a; /* soft yellow */
   text-shadow:
-    0 0 10px rgba(250, 204, 21, 0.7),
-    0 0 24px rgba(250, 204, 21, 0.55);
+    0 0 6px rgba(250, 204, 21, 0.65),
+    0 0 16px rgba(250, 204, 21, 0.4);
+  margin-right: 4px;
 }
 
-/* W = cool neon */
+/* W = cool cyan glow */
 .logo-w {
-  color: #e5f4ff;
+  color: #e5f3ff;
   text-shadow:
-    0 0 12px rgba(56, 189, 248, 0.9),
-    0 0 30px rgba(56, 189, 248, 0.85);
-  transform: translateY(-1px);
+    0 0 6px rgba(56, 189, 248, 0.75),
+    0 0 18px rgba(56, 189, 248, 0.55);
 }
-
 .avatar-caption {
   font-size: 14px;
   color: #9ca3af;
+  margin-top: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 /* RESPONSIVE */

@@ -81,26 +81,31 @@ function renderExpenses() {
 }
 
 
-// Scroll Active Navigation Highlight
-const sections = document.querySelectorAll("section");
+// ===== NAV ACTIVE LINK ON SCROLL =====
 const navLinks = document.querySelectorAll(".nav-link");
+const navSections = Array.from(document.querySelectorAll("section[id]"));
 
-function updateActiveLink() {
-  let current = "";
-  
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 120; // adjust if needed
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
+function setActiveNav() {
+  const scrollY = window.pageYOffset;
+  let currentId = navSections[0]?.id || "home";
+
+  navSections.forEach((section) => {
+    const sectionTop = section.offsetTop - 160; // navbar height offset
+    if (scrollY >= sectionTop) {
+      currentId = section.id;
     }
   });
 
   navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href").includes(current)) {
+    const targetId = link.getAttribute("href").slice(1); // "#about" -> "about"
+    if (targetId === currentId) {
       link.classList.add("active");
+    } else {
+      link.classList.remove("active");
     }
   });
 }
 
-window.addEventListener("scroll", updateActiveLink);
+window.addEventListener("scroll", setActiveNav);
+window.addEventListener("load", setActiveNav);
+

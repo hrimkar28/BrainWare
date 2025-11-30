@@ -81,23 +81,29 @@ function renderExpenses() {
 }
 
 
-// ===== NAV ACTIVE LINK ON SCROLL =====
+// ===== NAV ACTIVE LINK ON SCROLL (viewport based) =====
 const navLinks = document.querySelectorAll(".nav-link");
-const navSections = Array.from(document.querySelectorAll("section[id]"));
+const navSections = document.querySelectorAll("section[id]");
 
 function setActiveNav() {
-  const scrollY = window.pageYOffset;
-  let currentId = navSections[0]?.id || "home";
+  let currentId = "";
 
   navSections.forEach((section) => {
-    const sectionTop = section.offsetTop - 160; // navbar height offset
-    if (scrollY >= sectionTop) {
+    const rect = section.getBoundingClientRect();
+    const triggerLine = 160; // top se kitni height pe section "active" mana jayega
+
+    if (rect.top <= triggerLine && rect.bottom >= triggerLine) {
       currentId = section.id;
     }
   });
 
+  // Fallback: agar kisi reason se kuch nahi mila to home active
+  if (!currentId && navSections.length > 0) {
+    currentId = navSections[0].id;
+  }
+
   navLinks.forEach((link) => {
-    const targetId = link.getAttribute("href").slice(1); // "#about" -> "about"
+    const targetId = link.getAttribute("href").slice(1); // "#contact" -> "contact"
     if (targetId === currentId) {
       link.classList.add("active");
     } else {
